@@ -1,0 +1,16 @@
+{
+    "uuid":"8cc0329b-497a-4588-92eb-70a64a1f36b1",
+    "accountId":"cb7499b3-83f7-4e18-b119-55b920b676b1",
+    "friendlyName":"Cozinha",
+    "description":"Smart Device Switch",
+    "displayCategories":"LIGHT",
+    "interface": "Alexa."
+},
+{
+    "uuid":"8fd0617a-45ff-4dc3-a592-7eb46ca9a480",
+    "accountId":"cb7499b3-83f7-4e18-b119-55b920b676b1",
+    "friendlyName":"Casa",
+    "description":"Smart Device Switch",
+    "displayCategories":"TEMPERATURE_SENSOR",
+    "interface": "Alexa.PowerController"
+}
