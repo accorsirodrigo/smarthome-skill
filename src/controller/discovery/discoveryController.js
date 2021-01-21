@@ -10,6 +10,7 @@ const config = {
 async function handleDiscovery(request, context) {
     try{
         let dbDevices = await devices();
+
         let endpointsMap = [...dbDevices].map(data => ({
                 endpointId: data.uuid,
                 manufacturerName: config.manufacture,
