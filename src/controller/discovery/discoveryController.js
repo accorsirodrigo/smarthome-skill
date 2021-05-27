@@ -16,7 +16,7 @@ async function handleDiscovery(request, context) {
                 manufacturerName: config.manufacture,
                 friendlyName: data.friendlyName,
                 description: data.description,
-                displayCategories: `[${data.displayCategories}]`,
+                displayCategories: [data.displayCategories],
                 cookie: {
                     type: data.displayCategories,
                     accountId: data.accountId
@@ -28,6 +28,8 @@ async function handleDiscovery(request, context) {
                         version: config.version
                     },
                     {
+                        type: "AlexaInterface",
+                        proactivelyReported: true,
                         interface: data.interface,
                         version: config.version,
                         properties: {
@@ -40,22 +42,21 @@ async function handleDiscovery(request, context) {
                 ]
             })
         );
-
-        let endpointsObjects = {
-            endpoints:endpointsMap
-        };
-
         var header = request.directive.header;
-        header.name = "Discover.Response";
+        header.name = "Discover.Response"; 
+
+        let payload = {
+            endpoints: endpointsMap
+        }
 
         let response = {
             event:{
-                header: header, 
-                payload: endpointsObjects
+                header:header,
+                payload:payload
             }
-        };
+        }
 
-        log("DEBUG", "Discovery Response: ", JSON.stringify(response));
+        log("DEBUG:", "Discovery Response: ", JSON.stringify(response));
         context.succeed(response);
     } catch (err) {
         //throw new DiscoveryError("handleDiscovery", err.message);
