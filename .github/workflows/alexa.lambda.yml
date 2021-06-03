@@ -47,7 +47,7 @@ jobs:
           aws_access_key_id: ${{ secrets.AWS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
           aws_region: ${{ secrets.AWS_REGION }}
-          function_name: alexa_lambda
+          function_name: 	alexa_function
           zip_file: distro.zip
           memory_size: 128
           timeout: 10
